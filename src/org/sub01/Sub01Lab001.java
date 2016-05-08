@@ -11,5 +11,8 @@ public class Sub01Lab001 {
 	public void setClassName(String className) {
 		this.className = className;
 	}
+	public void lab001() {
+		System.out.println("Hello World...");
+	}
 	
 }
