@@ -10,4 +10,8 @@ public class Lab002 extends Lab {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public void lab001() {
+		// 
+	}
 }
