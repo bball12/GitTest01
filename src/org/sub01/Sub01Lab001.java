@@ -15,4 +15,8 @@ public class Sub01Lab001 {
 		System.out.println("Hello World...");
 	}
 	
+	public void lab002() {
+		System.out.println("Hello World...");
+	}
+	
 }
