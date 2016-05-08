@@ -14,4 +14,8 @@ public class Lab002 extends Lab {
 	public void lab001() {
 		// 
 	}
+	
+	public void lab002() {
+		
+	}
 }
