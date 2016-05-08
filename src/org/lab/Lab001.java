@@ -204,9 +204,16 @@ public class Lab001 extends Lab {
 	}
 	
 	/**
-	 * printing "Hello World lab005()....." characters
+	 * printing "Hello World lab005()" characters
 	 */
 	private void lab005() {
+		System.out.println("Hello World lab004().....");
+	}
+	
+	/**
+	 * printing "Hello World lab006()" characters
+	 */
+	private void lab006() {
 		System.out.println("Hello World lab004().....");
 	}
 	
