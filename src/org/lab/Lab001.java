@@ -217,6 +217,13 @@ public class Lab001 extends Lab {
 		System.out.println("Hello World lab004().....");
 	}
 	
+	/**
+	 * printing "Hello World lab007()" characters
+	 */
+	private void lab007() {
+		System.out.println("Hello World lab004().....");
+	}
+	
     private FixedCCTVSystemVO getFixedCctvDriveChk (String sectCd ) {
     	FixedCCTVSystemVO vo = new FixedCCTVSystemVO();
     	if (sectCd.equals("43730")) {
