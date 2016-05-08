@@ -207,21 +207,28 @@ public class Lab001 extends Lab {
 	 * printing "Hello World lab005()" characters
 	 */
 	private void lab005() {
-		System.out.println("Hello World lab004().....");
+		System.out.println("Hello World lab005().....");
 	}
 	
 	/**
 	 * printing "Hello World lab006()" characters
 	 */
 	private void lab006() {
-		System.out.println("Hello World lab004().....");
+		System.out.println("Hello World lab006().....");
 	}
 	
 	/**
 	 * printing "Hello World lab007()" characters
 	 */
 	private void lab007() {
-		System.out.println("Hello World lab004().....");
+		System.out.println("Hello World lab007().....");
+	}
+	
+	/**
+	 * printing "Hello World lab008()" characters
+	 */
+	private void lab008() {
+		System.out.println("Hello World lab008().....");
 	}
 	
     private FixedCCTVSystemVO getFixedCctvDriveChk (String sectCd ) {
