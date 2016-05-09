@@ -1,4 +1,4 @@
-package org.lab;
+package org.kwk.dev.oc;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,15 +10,14 @@ import java.nio.channels.FileChannel;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import org.lab.LabEffector;
 
-public class Lab001 extends Lab {
+public class Lab001 extends LabEffector {
 	
-	public Lab001() {
-		
-	}
-	
+	@Override
 	public void doTest() {
-		 lab004();
+		// TODO Auto-generated method stub
+		
 	}
 	
 	/**
@@ -198,47 +197,7 @@ public class Lab001 extends Lab {
 			System.out.println("[" + i + "][" + fileNames[i] + "]");
 		}
 	}
-
-	/**
-	 * printing "Hello World lab004()....." characters
-	 */
-	private void lab004() {
-		System.out.println("Hello World lab004().....");
-	}
-	
-	/**
-	 * printing "Hello World lab005()" characters
-	 */
-	@SuppressWarnings("unused")
-	private void lab005() {
-		System.out.println("Hello World lab005().....");
-	}
-	
-	/**
-	 * printing "Hello World lab006()" characters
-	 */
-	@SuppressWarnings("unused")
-	private void lab006() {
-		System.out.println("Hello World lab006().....");
-	}
-	
-	/**
-	 * printing "Hello World lab007()" characters
-	 */
-	@SuppressWarnings("unused")
-	private void lab007() {
-		System.out.println("Hello World lab007().....");
-	}
-	
-	/**
-	 * printing "Hello World lab008()" characters
-	 */
-	@SuppressWarnings("unused")
-	private void lab008() {
-		System.out.println("Hello World lab008().....");
-	}
-	
-    private FixedCCTVSystemVO getFixedCctvDriveChk (String sectCd ) {
+	private FixedCCTVSystemVO getFixedCctvDriveChk (String sectCd ) {
     	FixedCCTVSystemVO vo = new FixedCCTVSystemVO();
     	if (sectCd.equals("43730")) {
     		vo.setOfficeCd("43730");
@@ -290,8 +249,7 @@ public class Lab001 extends Lab {
 		}
 		return ret;
 	}
+
+
 	
-	class crackUnitVO {
-		
-	}
 }

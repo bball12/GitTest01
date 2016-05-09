@@ -1,22 +1,8 @@
-package org.lab;
+package org.kwk.dev.oc;
+
 import java.io.Serializable;
 
-public class Test {
-	public static void main(String[] args) {
-		Lab001 lab = new Lab001();
-		lab.run();
-	}
-}
-
-abstract class Lab {
-	public abstract void doTest();
-	
-	public void run() {
-		doTest();
-	}
-}
-
-class FixedCCTVSystemVO  implements Serializable {
+public class FixedCCTVSystemVO  implements Serializable {
 
 	/**
 	 * 
@@ -79,5 +65,3 @@ class FixedCCTVSystemVO  implements Serializable {
 	}
 	
 }
-
-
