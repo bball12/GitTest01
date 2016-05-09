@@ -2,9 +2,9 @@ package org.lab;
 
 public abstract class LabEffector {
 
-	public abstract void doTest();
+	public abstract void doRun();
 		
 	public void run() {
-		doTest();
+		doRun();
 	}
 }
