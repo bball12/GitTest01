@@ -13,7 +13,7 @@ import org.lab.LabEffector;
 public class Lab001 extends LabEffector {
 	
 	@Override
-	public void doTest() {
+	public void doRun() {
 		// TODO Auto-generated method stub
 		
 	}
