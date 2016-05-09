@@ -24,6 +24,7 @@ public class Lab001 extends Lab {
 	/**
 	 * 파일 갯수를 체크한다.
 	 */
+	@SuppressWarnings("unused")
 	public void lab001() {
 //		String sourceFolderName = "C:/SMSImage/SGS_DATA";
 //		File sourceFolder = new File(sourceFolderName);
@@ -106,6 +107,7 @@ public class Lab001 extends Lab {
 	}
 	
 	
+	@SuppressWarnings("unused")
 	private void lab002() {
 		String testFolerName = "C:/SMSImage/SGS_DATA";
 		String destFolerName = "C:/SMSImage/SGS_DATA/Dest";
@@ -178,6 +180,7 @@ public class Lab001 extends Lab {
 		}
 	}
 	
+	@SuppressWarnings("unused")
 	private void lab003() {
 		String testFolerName = "C:/SMSImage/SGS_DATA/ABC/";
 		File testFolder = new File(testFolerName);
@@ -206,6 +209,7 @@ public class Lab001 extends Lab {
 	/**
 	 * printing "Hello World lab005()" characters
 	 */
+	@SuppressWarnings("unused")
 	private void lab005() {
 		System.out.println("Hello World lab005().....");
 	}
@@ -213,6 +217,7 @@ public class Lab001 extends Lab {
 	/**
 	 * printing "Hello World lab006()" characters
 	 */
+	@SuppressWarnings("unused")
 	private void lab006() {
 		System.out.println("Hello World lab006().....");
 	}
@@ -220,6 +225,7 @@ public class Lab001 extends Lab {
 	/**
 	 * printing "Hello World lab007()" characters
 	 */
+	@SuppressWarnings("unused")
 	private void lab007() {
 		System.out.println("Hello World lab007().....");
 	}
@@ -227,6 +233,7 @@ public class Lab001 extends Lab {
 	/**
 	 * printing "Hello World lab008()" characters
 	 */
+	@SuppressWarnings("unused")
 	private void lab008() {
 		System.out.println("Hello World lab008().....");
 	}
