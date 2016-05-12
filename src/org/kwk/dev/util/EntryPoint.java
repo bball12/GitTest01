@@ -1,7 +1,10 @@
 package org.kwk.dev.util;
 
+
 public class EntryPoint {
 	public static void main(String[] args) {
-		System.out.println("org.kwk.dev.util.EntryPoint class entrypoint");
+		
+		Lab001 lab = new Lab001();
+		System.out.println("[" + lab.isDriveCheck() + "]");
 	}
 }
