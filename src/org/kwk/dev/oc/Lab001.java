@@ -15,14 +15,18 @@ public class Lab001 extends LabEffector {
 	@Override
 	public void doRun() {
 		// TODO Auto-generated method stub
-		
+		lab000();
+	}
+	
+	private void lab000() {
+		System.out.println("lab000().....");
 	}
 	
 	/**
 	 * 파일 갯수를 체크한다.
 	 */
 	@SuppressWarnings("unused")
-	public void lab001() {
+	private void lab001() {
 //		String sourceFolderName = "C:/SMSImage/SGS_DATA";
 //		File sourceFolder = new File(sourceFolderName);
 //		
