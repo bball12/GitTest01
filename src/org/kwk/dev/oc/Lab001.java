@@ -15,9 +15,10 @@ public class Lab001 extends LabEffector {
 	@Override
 	public void doRun() {
 		// TODO Auto-generated method stub
-		lab000();
+		lab002();
 	}
 	
+	@SuppressWarnings("unused")
 	private void lab000() {
 		System.out.println("lab000().....");
 	}
@@ -107,7 +108,6 @@ public class Lab001 extends LabEffector {
 
 	}
 	
-	
 	@SuppressWarnings("unused")
 	private void lab002() {
 		String testFolerName = "C:/SMSImage/SGS_DATA";
@@ -164,7 +164,6 @@ public class Lab001 extends LabEffector {
 					vehicleNumber = fileContents[0];
 					specialProtectionArea = fileContents[1];
 
-
 				} catch (FileNotFoundException ex) {
 					
 				} catch (IOException ex) {
@@ -176,8 +175,9 @@ public class Lab001 extends LabEffector {
 				System.out.println("[파일순번][" + fileSequence + "]");
 				System.out.println("[차량번호][" + vehicleNumber + "]");
 				System.out.println("[특별보호구역][" + specialProtectionArea + "]");
+				System.out.println("[파일명][" + testFiles[i].getName() + "]");
+				System.out.println("[파일명 사이즈][" + testFiles[i].getName().length() + "]");
 			}
-		
 		}
 	}
 	
@@ -199,6 +199,7 @@ public class Lab001 extends LabEffector {
 			System.out.println("[" + i + "][" + fileNames[i] + "]");
 		}
 	}
+	
 	private FixedCCTVSystemVO getFixedCctvDriveChk (String sectCd ) {
     	FixedCCTVSystemVO vo = new FixedCCTVSystemVO();
     	if (sectCd.equals("43730")) {
