@@ -15,7 +15,7 @@ public class Lab001 extends LabEffector {
 	@Override
 	public void doRun() {
 		// TODO Auto-generated method stub
-		lab002();
+		lab003();
 	}
 	
 	@SuppressWarnings("unused")
@@ -181,7 +181,6 @@ public class Lab001 extends LabEffector {
 		}
 	}
 	
-	@SuppressWarnings("unused")
 	private void lab003() {
 		String testFolerName = "C:/SMSImage/SGS_DATA/ABC/";
 		File testFolder = new File(testFolerName);
