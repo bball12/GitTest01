@@ -51,4 +51,8 @@ public class Lab001 {
 	public void lab002() {
 		
 	}
+	
+	public void lab003() {
+		
+	}
 }
