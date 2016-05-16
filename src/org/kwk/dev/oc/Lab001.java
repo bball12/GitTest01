@@ -213,5 +213,8 @@ public class Lab001 extends LabEffector {
     	
     	return vo;
 	}
- 
+	
+	private void lab004() {
+		
+	}
 }
