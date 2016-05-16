@@ -182,21 +182,25 @@ public class Lab001 extends LabEffector {
 	}
 	
 	private void lab003() {
-		String testFolerName = "C:/SMSImage/SGS_DATA/ABC/";
+		String testFolerName = "C:/SMSImage/ABC/";
 		File testFolder = new File(testFolerName);
-		File newFolder = new File(testFolder.getAbsolutePath() + "_lock");
+		File lockFolder = new File(testFolder.getAbsolutePath() + "_lock");
+		File finalFolder = new File(testFolder.getAbsolutePath() + "_F");
 		
-		boolean isRenamed = testFolder.renameTo(newFolder);
+		boolean isRenamed = testFolder.renameTo(lockFolder);
 		
 		System.out.println("[" + isRenamed + "][" + testFolder.getName() + "]");
-		System.out.println("[" + isRenamed + "][" + newFolder.getName() + "]");
+		System.out.println("[" + isRenamed + "][" + lockFolder.getName() + "]");
 		
 //		System.out.println("[" + testFolder.getAbsolutePath() + "]");
 		
-		String[] fileNames = newFolder.list();
+		String[] fileNames = lockFolder.list();
 		for (int i = 0; i < fileNames.length; i++) {
 			System.out.println("[" + i + "][" + fileNames[i] + "]");
 		}
+		
+		isRenamed = lockFolder.renameTo(finalFolder);
+		System.out.println("[" + isRenamed + "][" + lockFolder.getName() + "]");
 	}
 	
 	private FixedCCTVSystemVO getFixedCctvDriveChk (String sectCd ) {
