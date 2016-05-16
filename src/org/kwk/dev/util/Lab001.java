@@ -47,4 +47,8 @@ public class Lab001 {
 			System.out.println("[" + ex.toString() + "]");
 		}
 	}
+	
+	public void lab002() {
+		
+	}
 }
