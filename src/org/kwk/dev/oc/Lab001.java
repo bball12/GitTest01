@@ -1,12 +1,17 @@
 package org.kwk.dev.oc;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import org.lab.LabEffector;
 
@@ -15,7 +20,7 @@ public class Lab001 extends LabEffector {
 	@Override
 	public void doRun() {
 		// TODO Auto-generated method stub
-		lab003();
+		lab004();
 	}
 	
 	@SuppressWarnings("unused")
@@ -181,6 +186,7 @@ public class Lab001 extends LabEffector {
 		}
 	}
 	
+	@SuppressWarnings("unused")
 	private void lab003() {
 		String testFolerName = "C:/SMSImage/ABC/";
 		File testFolder = new File(testFolerName);
@@ -214,7 +220,107 @@ public class Lab001 extends LabEffector {
     	return vo;
 	}
 	
+	/**
+	 * 옥천군 사전알리미 파일 분석 테스트
+	 */
 	private void lab004() {
 		
+		List<FixedCCTVSystemVO> cctvSytmList = new ArrayList<FixedCCTVSystemVO>();
+		
+		FixedCCTVSystemVO ocFixedCCTVSystemVO = new FixedCCTVSystemVO();
+		ocFixedCCTVSystemVO.setOfficeCd("43730");
+		ocFixedCCTVSystemVO.setOfficeNm("옥천군청");
+		ocFixedCCTVSystemVO.setSmsStorePath("C:/SMSImage/SMSnotice");
+		
+		cctvSytmList.add(ocFixedCCTVSystemVO);
+		
+		for (FixedCCTVSystemVO fixedCCTVSystemVO : cctvSytmList) {
+			String smsStorePath = fixedCCTVSystemVO.getSmsStorePath();
+			String officeCd = fixedCCTVSystemVO.getOfficeCd();
+			File smsStoreFolder = new File(smsStorePath);
+			
+			String[] fileList = smsStoreFolder.list();
+			File fileItm = null;
+			String movePath = null;
+
+			for (int i = 0; i < fileList.length; i++) {
+				fileItm = null;
+				fileItm = new File(smsStorePath + File.separatorChar + fileList[i]);
+				
+				SMSNotice001VO recvNotice001VO = new SMSNotice001VO();
+				recvNotice001VO.setAdmiCd("43730");
+				recvNotice001VO.setSectCd(fixedCCTVSystemVO.getOfficeCd());
+				
+				boolean ret = false;
+				try {
+					ret = makeSMSNoticeByFile(fileItm, recvNotice001VO);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+			
+		}
+
 	}
+	
+	private boolean makeSMSNoticeByFile(File srcFile ,SMSNotice001VO tgtVO) throws Exception {
+		boolean ret = true; // 기본값을 true. 중간에 에러 발생시 false 셋팅.
+		if ( srcFile == null || tgtVO == null ){ // 파라미터가 null 이면 return false 하여 종료.
+			ret = false;
+			return ret;
+		}
+		
+		try {
+			String fileNm = srcFile.getName();
+
+			tgtVO.setFileNm(fileNm);
+			tgtVO.setFileSize(""+srcFile.length());
+
+			byte[] bb_fileName = fileNm.getBytes();
+			
+			System.out.println("[bb_fileName.length]:[" + bb_fileName.length + "]");
+			System.out.println("[" + new String(bb_fileName) + "]");
+			System.out.println("[" + new String(bb_fileName, 0, 14) + "]");
+			System.out.println("[" + new String(bb_fileName, 14, 12) + "]");
+			System.out.println("[" + new String(bb_fileName, 26, 3) + "]");
+			System.out.println("[" + new String(bb_fileName, 29, 30) + "]");
+			System.out.println("[" + new String(bb_fileName, 59, 1) + "]");
+			System.out.println("[" + new String(bb_fileName, 60, 1) + "]");
+			System.out.println("[" + new String(bb_fileName, 61, 4) + "]");
+
+			if (bb_fileName.length != 65) return false;
+
+			String chkDtm = new String(bb_fileName, 0, 14);					// 단속일시
+			String vehiNo = new String(bb_fileName, 14, 12);				// 차량번호
+			String trEqup = new String(bb_fileName, 26, 3);					// 단속장비(CCTV) 고유번호
+			String equpIp = new String("아이피");								// 단속장비(CCTV) IP
+
+			tgtVO.setChkDtm(chkDtm);
+			tgtVO.setVehiNo(vehiNo);
+			tgtVO.setTrEqup(trEqup);
+			tgtVO.setEqupIp(equpIp);
+			tgtVO.setNotiType("1");
+			tgtVO.setCreateDtm(chkDtm);
+
+			System.out.println("[" + tgtVO.getChkDtm() + "]"
+					+ "[" + tgtVO.getVehiNo() + "]"
+					+ "[" + tgtVO.getTrEqup() + "]"
+					+ "[" + tgtVO.getEqupIp()+ "]"
+					+ "[" + tgtVO.getNotiType() + "]"
+					+ "[" + tgtVO.getCreateDtm()+ "]");
+
+			/////////////////////////////////////////////////////////////////////////
+			// 
+			/////////////////////////////////////////////////////////////////////////
+
+		} catch (Exception e) {
+			System.out.println("[" + e.toString() + "]");
+			e.printStackTrace();	ret=false;	throw e;
+		}
+
+		return ret;
+	}
+	
 }
